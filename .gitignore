@@ -1,0 +1,5 @@
+capybara.yml
+drivers/chromedriver.bat
+config/.env.local
+reports/
+log/
