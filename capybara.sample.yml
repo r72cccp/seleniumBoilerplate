@@ -1,0 +1,18 @@
+# Настройки remote webdriver
+webdriver_settings:
+  browser: :remote
+  desired_capabilities: :chrome
+  url: "http://x.x.x.x:9515"
+app_host:
+  default: 'http://dev.yoursite.ru'
+  staging: 'https://staging.yoursite.ru'
+  production: 'https://yoursite.ru'
+
+# Настройки local webdriver
+# webdriver_settings:
+#   browser: 'chrome'
+#   driver_path: './drivers/chromedriver'
+# app_host:
+#   default: 'http://dev.yoursite.ru'
+#   staging: 'https://staging.yoursite.ru'
+#   production: 'https://yoursite.ru'

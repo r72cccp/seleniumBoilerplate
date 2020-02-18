@@ -1,0 +1,158 @@
+require: rubocop-rspec
+
+Rails:
+  Enabled: true
+
+Style/Documentation:
+  Enabled: false
+
+# Common configuration.
+AllCops:
+  TargetRubyVersion: 2.4.1
+  # Include common Ruby source files.
+  Include:
+  - 'app/**/*'
+  - '**/*.rake'
+  - '**/config.ru'
+  - '**/Gemfile'
+  - '**/Rakefile'
+  Exclude:
+  - 'app/views/**/*'
+  - 'app/mailers/**/*'
+  - 'db/**/*'
+  - 'config/**/*'
+  - 'bin/**/*'
+  - 'public/**/*'
+  - 'spec/**/*'
+  DisplayCopNames: false
+  DisplayStyleGuide: true
+  UseCache: false
+  DefaultFormatter: progress
+
+Layout/AlignHash:
+  EnforcedLastArgumentHashStyle: ignore_implicit
+
+Layout/AlignParameters:
+  EnforcedStyle: with_fixed_indentation
+
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+
+Layout/IndentHash:
+  EnforcedStyle: consistent
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+# Checks formatting of special comments
+Style/CommentAnnotation:
+  Keywords:
+  - TODO
+  - NOTE
+  - FIXME
+  - OPTIMIZE
+  - HACK
+  - REVIEW
+
+Style/EmptyMethod:
+  EnforcedStyle: expanded
+
+Style/FrozenStringLiteralComment:
+  Enabled: true
+
+Style/GuardClause:
+  MinBodyLength: 3
+
+Style/PercentLiteralDelimiters:
+  PreferredDelimiters:
+    '%':  ()
+    '%i': '[]'
+    '%q': ()
+    '%Q': ()
+    '%r': '{}'
+    '%s': ()
+    '%w': '[]'
+    '%W': '[]'
+    '%x': ()
+
+Style/SymbolArray:
+  EnforcedStyle: percent
+
+Style/TrailingCommaInHashLiteral:
+  EnforcedStyleForMultiline: comma
+
+Naming/PredicateName:
+  NamePrefixBlacklist:
+  - is_
+  - has_
+  - have_
+
+Style/SingleLineBlockParams:
+  Methods:
+  - reduce:
+    - acc
+    - elem
+  - inject:
+    - acc
+    - elem
+
+Style/StringLiterals:
+  Exclude:
+  - 'db/schema.rb'
+
+##################### Metrics ##################################
+
+Metrics/AbcSize:
+  # The ABC size is a calculated magnitude, so this number can be an Integer or
+  # a Float.
+  Max: 32
+
+Metrics/BlockLength:
+  Exclude:
+  - 'lib/tasks/**.rake'
+  - "spec/**/*.rb"
+
+Metrics/ClassLength:
+  Max: 130
+
+Metrics/ModuleLength:
+  Max: 120
+  Exclude:
+  - "spec/**/*.rb"
+
+Metrics/CyclomaticComplexity:
+  Max: 8
+
+Metrics/LineLength:
+  Max: 120
+
+Metrics/MethodLength:
+  Max: 25
+
+Metrics/PerceivedComplexity:
+  Max: 8
+
+##################### Rails ##################################
+
+Rails/DynamicFindBy:
+  Whitelist:
+  - find_by_sql
+  - find_by_encrypted_id
+
+Rails/HasAndBelongsToMany:
+  Enabled: false
+
+Rails/OutputSafety:
+  Enabled: false
+
+Rails/SkipsModelValidations:
+  Enabled: false
+
+Naming/AccessorMethodName:
+  Enabled: false
+
+Bundler/OrderedGems:
+  Enabled: false
+
+Style/AsciiComments:
+  Enabled: false
